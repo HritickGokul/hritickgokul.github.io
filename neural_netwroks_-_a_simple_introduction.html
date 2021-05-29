@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Chrome, Firefox OS and Opera Status Bar Color -->
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Neural Networks-A Simple Introduction">
+  
+  <meta name="description" content="Why neural networks have been shown to outperform a number of machine learning algorithms in many industry domains?">
+  <meta property="og:description" content="Why neural networks have been shown to outperform a number of machine learning algorithms in many industry domains?">
+  
+  <meta property="og:type" content="blog">
+  <title>Neural Networks-A Simple Introduction</title>
+  <!-- Favicon -->
+  
+  <link rel="shortcut icon" href="👋🏼">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+  <link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+  <link rel="stylesheet" type="text/css" href="css/notablog.css">
+  <link rel="stylesheet" type="text/css" href="css/theme.css">
+  <style>
+    :root {
+      font-size: 18px;
+    }
+
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+    <a href="index.html">
+      <div class="Navbar__Btn"><span>👋🏼</span> <span>Home</span></div>
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <span class="Navbar__Delim">&centerdot;</span>
+    <a href="about.html">
+      <div class="Navbar__Btn"><span>😄</span> <span>About</span></div>
+    </a>
+    
+    
+    
+    <span class="Navbar__Delim">&centerdot;</span>
+    <a href="portfolio.html">
+      <div class="Navbar__Btn"><span>📋</span> <span>Portfolio</span></div>
+    </a>
+    
+    
+    
+    <span class="Navbar__Delim">&centerdot;</span>
+    <a href="book .html">
+      <div class="Navbar__Btn"><span>📚</span> <span>Book Shelf</span></div>
+    </a>
+    
+    
+    
+    
+    
+    
+  </nav>
+  <header class="Header">
+      
+    <div class="Header__Cover">
+        <img src="https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb">
+      </div>
+      
+    <div class="Header__Spacer ">
+    </div>
+    
+    <div class="Header__Icon"><span>〰️</span></div>
+    
+    <h1 class="Header__Title">Neural Networks-A Simple Introduction</h1>
+        
+    <div class="DateTagBar">
+          
+      <span class="DateTagBar__Item DateTagBar__Date">Posted on Sat, May 15, 2021</span>
+          
+          
+      <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--orange">
+            <a href="tag/Article.html">Article</a>
+          </span>
+          
+      <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Machine Learning.html">Machine Learning</a>
+          </span>
+          
+        </div>
+        
+  </header>
+      <article id="https://www.notion.so/e5a903e3502f4ce7bc255253f9361c52" class="PageRoot"><h1 id="https://www.notion.so/a6da47e79b08450db6c6412f3935758a" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/a6da47e79b08450db6c6412f3935758a"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">What are Neural Networks?</strong></span></span></h1><div id="https://www.notion.so/9dd4e6c65ad64168bf8f7838c0b0c2c4" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Neural networks are algorithms that have a unique ability to extract meaningful information from complex data — Data that are extremely complex for a human brain to follow.</span></span></p></div><div id="https://www.notion.so/0198d8a9029e40a99dc8e7293d0d72a1" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Let’s say a cat classifier, What are the features you would use to train a model to classify whether a given image is a cat or not? At first, it sounds easy, you would go for features like the size, color, paws, teeth, etc. But there are 40–70 different breeds of cats in the world and each of them differ somewhat in their color, size, etc. Now all of a sudden this became a tedious process. You can’t just manually find unique features in every single breed of cat. It would become a nightmare!</span></span></p></div><div id="https://www.notion.so/cdcc17d6140f4697afd4bcb5c3c73f56" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">So, is there a way to extract the features from the input without doing any manual process? Absolutely!</span></span></p></div><div id="https://www.notion.so/4548451d6ea945e1b963bc9c6f3c2d55" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">The biggest advantage of Deep Learning is that we do not need to manually extract features from the image. The network learns to extract features while training. You just feed the image to the network (pixel values). What you need is to define the Neural Network architecture and a labeled dataset.</span></span></p></div><div id="https://www.notion.so/72cecae265f34df69f492613cd37ee31" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">How do we “architect” a neural network?</span></span></p></div><div id="https://www.notion.so/22a0944e4d03400e900cf6df7b998134" class="ColorfulBlock ColorfulBlock--ColorBlue Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://medium.com/geekculture/neural-networks-a-simple-introduction-f4a80c26330c">Continue to read...</a></span></span></p></div></article>
+  <footer class="Footer">
+        <div>&copy; Hrithick Gokul Y 2021</div>
+    </footer>
+</body>
+
+</html>

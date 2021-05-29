@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Chrome, Firefox OS and Opera Status Bar Color -->
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Gradient Descent-A Roadmap to the Bottom of The Hill">
+  
+  <meta name="description" content="We will see how this algorithm works, the mathematics behind it, and the types of gradient descent.">
+  <meta property="og:description" content="We will see how this algorithm works, the mathematics behind it, and the types of gradient descent.">
+  
+  <meta property="og:type" content="blog">
+  <title>Gradient Descent-A Roadmap to the Bottom of The Hill</title>
+  <!-- Favicon -->
+  
+  <link rel="shortcut icon" href="👋🏼">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css">
+  <link rel="stylesheet" type="text/css" href="css/SourceSansPro.css">
+  <link rel="stylesheet" type="text/css" href="css/notablog.css">
+  <link rel="stylesheet" type="text/css" href="css/theme.css">
+  <style>
+    :root {
+      font-size: 18px;
+    }
+
+    .DateTagBar {
+      margin-top: 1.0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="Navbar">
+    <a href="index.html">
+      <div class="Navbar__Btn"><span>👋🏼</span> <span>Home</span></div>
+    </a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <span class="Navbar__Delim">&centerdot;</span>
+    <a href="about.html">
+      <div class="Navbar__Btn"><span>😄</span> <span>About</span></div>
+    </a>
+    
+    
+    
+    <span class="Navbar__Delim">&centerdot;</span>
+    <a href="portfolio.html">
+      <div class="Navbar__Btn"><span>📋</span> <span>Portfolio</span></div>
+    </a>
+    
+    
+    
+    <span class="Navbar__Delim">&centerdot;</span>
+    <a href="book .html">
+      <div class="Navbar__Btn"><span>📚</span> <span>Book Shelf</span></div>
+    </a>
+    
+    
+    
+    
+    
+    
+  </nav>
+  <header class="Header">
+      
+    <div class="Header__Cover">
+        <img src="https://www.notion.so/signed/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa77f28a3-bb0b-4010-961f-0e93b461f84c%2Fe17cb2d1-6d08-414e-9984-4a3d0a819721.jpg?table=block&id=14e1af3a-cc0e-42ed-92fb-4ca5c477e9d9">
+      </div>
+      
+    <div class="Header__Spacer ">
+    </div>
+    
+    <div class="Header__Icon"><span>⛰️</span></div>
+    
+    <h1 class="Header__Title">Gradient Descent-A Roadmap to the Bottom of The Hill</h1>
+        
+    <div class="DateTagBar">
+          
+      <span class="DateTagBar__Item DateTagBar__Date">Posted on Tue, May 4, 2021</span>
+          
+          
+      <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--orange">
+            <a href="tag/Article.html">Article</a>
+          </span>
+          
+      <span class="DateTagBar__Item DateTagBar__Tag DateTagBar__Tag--gray">
+            <a href="tag/Machine Learning.html">Machine Learning</a>
+          </span>
+          
+        </div>
+        
+  </header>
+      <article id="https://www.notion.so/14e1af3acc0e42ed92fb4ca5c477e9d9" class="PageRoot"><h1 id="https://www.notion.so/d4ec2d1e46964bbeb74a609bd93fc178" class="ColorfulBlock ColorfulBlock--ColorDefault Heading Heading--1"><a class="Anchor" href="#https://www.notion.so/d4ec2d1e46964bbeb74a609bd93fc178"><svg width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">Introduction</strong></span></span></h1><div id="https://www.notion.so/6d79ec56bd7b49b3b0001581dae972d1" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">Gradient descent is an iterative optimization algorithm that is used for finding the local/global minimum of a differential function. Since the main goal of this function is to find the minimum, it is widely used in machine learning to find the perfect parameters that minimize the cost value.</span></span></p></div><div id="https://www.notion.so/b1f29d27e8ea4d049f2d226db0cf7a8d" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString">In this article, we will see how this algorithm works, the mathematics behind this algorithm, and the types of gradient descent.</span></span></p></div><div id="https://www.notion.so/04a205ea33f547958a7c921efa4570b2" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><strong class="SemanticString__Fragment SemanticString__Fragment--Bold">How Exactly is it used in machine learning?</strong></span></span></p></div><div id="https://www.notion.so/88d2d8a65de74de9943a364da27e5e33" class="ColorfulBlock ColorfulBlock--ColorBlue Text"><p class="Text__Content"><span class="SemanticStringArray"><span class="SemanticString"><a class="SemanticString__Fragment SemanticString__Fragment--Link" href="https://medium.com/nerd-for-tech/gradient-descent-a-roadmap-to-the-bottom-of-the-hill-b054de1175ce">Continue to read...</a></span></span></p></div><div id="https://www.notion.so/7844b43a2a12418d8cc465d126396db0" class="ColorfulBlock ColorfulBlock--ColorDefault Text"><p class="Text__Content"><span class="SemanticStringArray"></span></p></div></article>
+  <footer class="Footer">
+        <div>&copy; Hrithick Gokul Y 2021</div>
+    </footer>
+</body>
+
+</html>
